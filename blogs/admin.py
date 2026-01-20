@@ -5,7 +5,7 @@ from .models import Category, Blog
 
 class BlogAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('title',)} # to generate slug automatically on the basis of title
-    list_display = ('title', 'category', 'author', 'status', 'is_featured')
+    list_display = ('title', 'category', 'category_id', 'author', 'status', 'is_featured')
     search_fields = ('id', 'title', 'category__category_name', 'status')
     list_editable = ('is_featured',)
 
